@@ -1,4 +1,4 @@
-package testepacote;
+package model;
 
 public class ContadorDePessoas {
 	private int limitePessoas;
@@ -13,15 +13,20 @@ public class ContadorDePessoas {
 	}
 	
 	public void registraEntrada(int quantidade) {
-		if(qtdePresentes + quantidade <= limitePessoas ){
+		if(qtdePresentes + quantidade < limitePessoas ){
 			qtdePresentes += quantidade;
+			qtdeTotal += quantidade;
 		}
 	}
 	
 	public void registraSaida(int quantidade) {
-		this.qtdeTotal = quantidade;
+		if((qtdePresentes - quantidade) > 0){
+			qtdePresentes -= quantidade;
+		}
 	}
 	
-	public void mostrarRelatorio() {
+	public String mostrarRelatorio() {
+		return "Quantidade presentes: " + qtdePresentes + "\nQuantidade que passaram pelo restaurante: " + qtdeTotal;
 	}
+	
 }

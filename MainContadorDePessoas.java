@@ -2,7 +2,7 @@ package main;
 
 import model.ContadorDePessoas;
 
-public class MainGincana {
+public class MainContadorDePessoas {
 	
 	public static void main(String[] args) {
 		ContadorDePessoas contadorDePessoas = new ContadorDePessoas(50);
